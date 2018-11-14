@@ -7,19 +7,19 @@ import java.io.PrintWriter;
 
 public class User {
 	
-	static CreateUser textField1 = new CreateUser();
-	static CreateUser textField_11 = new CreateUser();
-	static CreateUser textField_21 = new CreateUser();
-	static CreateUser textField_31 = new CreateUser();
-	static CreateUser textField_41 = new CreateUser();
+	static CreateUser textFieldValue = new CreateUser();
+	static CreateUser textFieldValue2 = new CreateUser();
+	static CreateUser textFieldValue3 = new CreateUser();
+	static CreateUser textFieldValue4 = new CreateUser();
+	static CreateUser textFieldValue5 = new CreateUser();
 	public static void CreateNewUser() throws IOException
 	{
 		PrintWriter writer = new PrintWriter("UserList");
-		writer.println("FirstName: " + textField1);
-		writer.println("Lastname: " + textField_11);
-		writer.println("Email: " + textField_21);
-		writer.println("password: " + textField_31);
-		writer.println("address: " + textField_41);
+		writer.println("FirstName: " + textFieldValue);
+		writer.println("Lastname: " + textFieldValue2);
+		writer.println("Email: " + textFieldValue3);
+		writer.println("password: " + textFieldValue4);
+		writer.println("address: " + textFieldValue5);
 		writer.close();
 	}
 	

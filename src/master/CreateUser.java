@@ -2,7 +2,9 @@ package master;
 
 import java.awt.EventQueue;
 import java.awt.event.InputMethodListener;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -124,6 +126,12 @@ public class CreateUser {
 		JButton btnCreateUser = new JButton("Create User");
 		btnCreateUser.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String textFieldValue = textField1.getText();
+				String textFieldValue2 = textField_11.getText();
+				String textFieldValue3 = textField_21.getText();
+				String textFieldValue4 = textField_31.getText();
+				String textFieldValue5 = textField_41.getText();
+				
 				System.out.println("We are giving you some time to write down your password");
 				try {
 					User.CreateNewUser();

@@ -2,6 +2,7 @@ package master;
 
 import java.awt.EventQueue;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.swing.JFrame;
@@ -10,6 +11,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import com.jgoodies.forms.factories.DefaultComponentFactory;
 
 public class MakeOrder {
 
@@ -68,8 +70,8 @@ public class MakeOrder {
 		lblUserId.setBounds(25, 87, 46, 14);
 		frame.getContentPane().add(lblUserId);
 		
-		JLabel lblShippingAddress = new JLabel("Shipping address");
-		lblShippingAddress.setBounds(25, 112, 105, 14);
+		JLabel lblShippingAddress = new JLabel("Shipping address, State, and Zipcode");
+		lblShippingAddress.setBounds(25, 112, 289, 14);
 		frame.getContentPane().add(lblShippingAddress);
 		
 		JLabel lblCost = new JLabel("Cost");
@@ -77,27 +79,27 @@ public class MakeOrder {
 		frame.getContentPane().add(lblCost);
 		
 		textField23 = new JTextField();
-		textField23.setBounds(117, 36, 86, 20);
+		textField23.setBounds(324, 36, 86, 20);
 		frame.getContentPane().add(textField23);
 		textField23.setColumns(10);
 		
 		textField_123 = new JTextField();
-		textField_123.setBounds(117, 59, 86, 20);
+		textField_123.setBounds(324, 59, 86, 20);
 		frame.getContentPane().add(textField_123);
 		textField_123.setColumns(10);
 		
 		textField_223 = new JTextField();
-		textField_223.setBounds(117, 84, 86, 20);
+		textField_223.setBounds(324, 84, 86, 20);
 		frame.getContentPane().add(textField_223);
 		textField_223.setColumns(10);
 		
 		textField_323 = new JTextField();
-		textField_323.setBounds(117, 109, 86, 20);
+		textField_323.setBounds(324, 109, 86, 20);
 		frame.getContentPane().add(textField_323);
 		textField_323.setColumns(10);
 		
 		textField_423 = new JTextField();
-		textField_423.setBounds(117, 137, 86, 20);
+		textField_423.setBounds(324, 134, 86, 20);
 		frame.getContentPane().add(textField_423);
 		textField_423.setColumns(10);
 		
@@ -105,24 +107,29 @@ public class MakeOrder {
 		btnProccessTheOrder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Please what while your Order is placed");
-				try (PrintWriter out = new PrintWriter("OrderFile")) {
-				    out.println("Item" + textField23);
-				    out.println("Amount" +textField_123);
-				    out.println("User ID" + textField_223);
-				    out.println("Shipping address" + textField_323);
-				    out.println("Cost" + textField_423);
-			} catch (FileNotFoundException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
+				
+				String textFieldValue1 = textField23.getText();
+				String textFieldValue12 = textField_123.getText();
+				String textFieldValue13 = textField_223.getText();
+				String textFieldValue14 = textField_323.getText();
+				String textFieldValue15 = textField_423.getText();
+				
+				try {
+					Order.CreateNewOrder();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				try {
+					Address.CreateNewAddress();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				System.out.println("Your order has been placed");
 			}
 		});
 		btnProccessTheOrder.setBounds(234, 227, 176, 23);
 		frame.getContentPane().add(btnProccessTheOrder);
 	}
-	
-	
-	
-
 }

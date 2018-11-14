@@ -7,16 +7,16 @@ public class Address {
 	
 	
 	
-	static MakeOrder textField_223 = new MakeOrder();
-	static MakeOrder textField_323 = new MakeOrder();
+	static MakeOrder textFieldValue13 = new MakeOrder();
+	static MakeOrder textFieldValue14 = new MakeOrder();
 	
 	
-	public static void CreateNewOrder() throws IOException
+	public static void CreateNewAddress() throws IOException
 	{
 		PrintWriter writer = new PrintWriter("UserLocation");
 		
-		writer.println("User ID: " + textField_223);
-		writer.println("Shipping Address: " + textField_323);
+		writer.println("User ID: " + textFieldValue13);
+		writer.println("Shipping Address: " + textFieldValue14);
 		writer.close();
 	}
 
