@@ -68,6 +68,11 @@ public class UI {
 		textField_1.setColumns(10);
 		
 		JButton btnEmail = new JButton("Email");
+		btnEmail.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		btnEmail.setBounds(95, 70, 103, 23);
 		frame.getContentPane().add(btnEmail);
 		
@@ -75,8 +80,8 @@ public class UI {
 		btnPassword.setBounds(95, 113, 103, 23);
 		frame.getContentPane().add(btnPassword);
 		
-		JLabel lblLoginToContinue = new JLabel("Login to continue");
-		lblLoginToContinue.setBounds(161, 42, 103, 14);
+		JLabel lblLoginToContinue = new JLabel("Login to continue (press the email and password button to verifiy)");
+		lblLoginToContinue.setBounds(10, 42, 414, 14);
 		frame.getContentPane().add(lblLoginToContinue);
 		
 		JLabel lblGenericUiFor = new JLabel("Generic UI for Amazon ripoff that doesn't order anything");

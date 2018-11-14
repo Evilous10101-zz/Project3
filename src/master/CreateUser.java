@@ -1,22 +1,33 @@
 package master;
 
 import java.awt.EventQueue;
+import java.awt.event.InputMethodListener;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class CreateUser {
-
+	private User User = new User();
 	private JFrame frame;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JTextField textField_4;
-
+	
+	
+	public static User FirstName = new User();
+	public static User LastName = new User();
+	public static User Email = new User();
+	public static User password = new User();
+	public static User address = new User();
+	
+	
 	/**
 	 * Launch the application.
 	 */
@@ -78,27 +89,44 @@ public class CreateUser {
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
+		textField.addInputMethodListener((InputMethodListener) FirstName);
+		
+		
 		textField_1 = new JTextField();
 		textField_1.setBounds(105, 55, 86, 20);
 		frame.getContentPane().add(textField_1);
 		textField_1.setColumns(10);
+		
+		textField_1.addInputMethodListener((InputMethodListener) LastName);
 		
 		textField_2 = new JTextField();
 		textField_2.setBounds(105, 80, 86, 20);
 		frame.getContentPane().add(textField_2);
 		textField_2.setColumns(10);
 		
+		textField_2.addInputMethodListener((InputMethodListener) Email);
+		
 		textField_3 = new JTextField();
 		textField_3.setBounds(105, 105, 86, 20);
 		frame.getContentPane().add(textField_3);
 		textField_3.setColumns(10);
+		
+		textField_3.addInputMethodListener((InputMethodListener) password);
 		
 		textField_4 = new JTextField();
 		textField_4.setBounds(105, 130, 86, 20);
 		frame.getContentPane().add(textField_4);
 		textField_4.setColumns(10);
 		
+		textField_4.addInputMethodListener((InputMethodListener) address);
+		
 		JButton btnCreateUser = new JButton("Create User");
+		btnCreateUser.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("We are giving you some time to write down your password");
+				
+			}
+		});
 		btnCreateUser.setBounds(312, 227, 112, 23);
 		frame.getContentPane().add(btnCreateUser);
 		
