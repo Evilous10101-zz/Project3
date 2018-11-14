@@ -6,9 +6,11 @@ import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class UI {
-
+	private CreateUser CreateUser = new CreateUser();
 	private JFrame frame;
 	private JTextField textField;
 	private JTextField textField_1;
@@ -39,14 +41,20 @@ public class UI {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	public void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JButton btnCreateANew = new JButton("Create a new user");
-		btnCreateANew.setBounds(10, 227, 131, 23);
+		btnCreateANew.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				CreateUser.CreateUser56();
+				
+			}
+		});
+		btnCreateANew.setBounds(10, 227, 162, 23);
 		frame.getContentPane().add(btnCreateANew);
 		
 		textField = new JTextField();
@@ -60,11 +68,11 @@ public class UI {
 		textField_1.setColumns(10);
 		
 		JButton btnEmail = new JButton("Email");
-		btnEmail.setBounds(109, 70, 89, 23);
+		btnEmail.setBounds(95, 70, 103, 23);
 		frame.getContentPane().add(btnEmail);
 		
 		JButton btnPassword = new JButton("Password");
-		btnPassword.setBounds(109, 113, 89, 23);
+		btnPassword.setBounds(95, 113, 103, 23);
 		frame.getContentPane().add(btnPassword);
 		
 		JLabel lblLoginToContinue = new JLabel("Login to continue");
@@ -76,6 +84,12 @@ public class UI {
 		frame.getContentPane().add(lblGenericUiFor);
 		
 		JButton btnMakeAnOrder = new JButton("Make an order");
+		btnMakeAnOrder.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MakeOrder.MakeOrder23();
+				
+			}
+		});
 		btnMakeAnOrder.setBounds(308, 227, 116, 23);
 		frame.getContentPane().add(btnMakeAnOrder);
 	}
