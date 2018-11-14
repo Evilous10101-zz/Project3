@@ -2,6 +2,7 @@ package master;
 
 import java.awt.EventQueue;
 import java.awt.event.InputMethodListener;
+import java.io.IOException;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -14,11 +15,11 @@ import java.awt.event.ActionEvent;
 public class CreateUser {
 	
 	private JFrame frame;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
+	private JTextField textField1;
+	private JTextField textField_11;
+	private JTextField textField_21;
+	private JTextField textField_31;
+	private JTextField textField_41;
 	
 	
 	public static User FirstName = new User();
@@ -84,39 +85,39 @@ public class CreateUser {
 		lblAddress.setBounds(23, 133, 72, 14);
 		frame.getContentPane().add(lblAddress);
 		
-		textField = new JTextField();
-		textField.setBounds(105, 30, 86, 20);
-		frame.getContentPane().add(textField);
-		textField.setColumns(10);
+		textField1 = new JTextField();
+		textField1.setBounds(105, 30, 86, 20);
+		frame.getContentPane().add(textField1);
+		textField1.setColumns(10);
 		
 		//textField.addInputMethodListener((InputMethodListener) FirstName);
 		
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(105, 55, 86, 20);
-		frame.getContentPane().add(textField_1);
-		textField_1.setColumns(10);
+		textField_11 = new JTextField();
+		textField_11.setBounds(105, 55, 86, 20);
+		frame.getContentPane().add(textField_11);
+		textField_11.setColumns(10);
 		
 		//textField_1.addInputMethodListener((InputMethodListener) LastName);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(105, 80, 86, 20);
-		frame.getContentPane().add(textField_2);
-		textField_2.setColumns(10);
+		textField_21 = new JTextField();
+		textField_21.setBounds(105, 80, 86, 20);
+		frame.getContentPane().add(textField_21);
+		textField_21.setColumns(10);
 		
 		//textField_2.addInputMethodListener((InputMethodListener) Email);
 		
-		textField_3 = new JTextField();
-		textField_3.setBounds(105, 105, 86, 20);
-		frame.getContentPane().add(textField_3);
-		textField_3.setColumns(10);
+		textField_31 = new JTextField();
+		textField_31.setBounds(105, 105, 86, 20);
+		frame.getContentPane().add(textField_31);
+		textField_31.setColumns(10);
 		
 		//textField_3.addInputMethodListener((InputMethodListener) password);
 		
-		textField_4 = new JTextField();
-		textField_4.setBounds(105, 130, 86, 20);
-		frame.getContentPane().add(textField_4);
-		textField_4.setColumns(10);
+		textField_41 = new JTextField();
+		textField_41.setBounds(105, 130, 86, 20);
+		frame.getContentPane().add(textField_41);
+		textField_41.setColumns(10);
 		
 		//textField_4.addInputMethodListener((InputMethodListener) address);
 		
@@ -124,7 +125,13 @@ public class CreateUser {
 		btnCreateUser.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("We are giving you some time to write down your password");
-				
+				try {
+					User.CreateNewUser();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				System.out.println("Your user has been created, Thank you for using our trash service");
 			}
 		});
 		btnCreateUser.setBounds(312, 227, 112, 23);

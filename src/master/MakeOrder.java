@@ -14,11 +14,11 @@ import java.awt.event.ActionEvent;
 public class MakeOrder {
 
 	private JFrame frame;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
+	private JTextField textField23;
+	private JTextField textField_123;
+	private JTextField textField_223;
+	private JTextField textField_323;
+	private JTextField textField_423;
 
 	/**
 	 * Launch the application.
@@ -46,7 +46,7 @@ public class MakeOrder {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	public void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -76,44 +76,46 @@ public class MakeOrder {
 		lblCost.setBounds(25, 137, 46, 14);
 		frame.getContentPane().add(lblCost);
 		
-		textField = new JTextField();
-		textField.setBounds(117, 36, 86, 20);
-		frame.getContentPane().add(textField);
-		textField.setColumns(10);
+		textField23 = new JTextField();
+		textField23.setBounds(117, 36, 86, 20);
+		frame.getContentPane().add(textField23);
+		textField23.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(117, 59, 86, 20);
-		frame.getContentPane().add(textField_1);
-		textField_1.setColumns(10);
+		textField_123 = new JTextField();
+		textField_123.setBounds(117, 59, 86, 20);
+		frame.getContentPane().add(textField_123);
+		textField_123.setColumns(10);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(117, 84, 86, 20);
-		frame.getContentPane().add(textField_2);
-		textField_2.setColumns(10);
+		textField_223 = new JTextField();
+		textField_223.setBounds(117, 84, 86, 20);
+		frame.getContentPane().add(textField_223);
+		textField_223.setColumns(10);
 		
-		textField_3 = new JTextField();
-		textField_3.setBounds(117, 109, 86, 20);
-		frame.getContentPane().add(textField_3);
-		textField_3.setColumns(10);
+		textField_323 = new JTextField();
+		textField_323.setBounds(117, 109, 86, 20);
+		frame.getContentPane().add(textField_323);
+		textField_323.setColumns(10);
 		
-		textField_4 = new JTextField();
-		textField_4.setBounds(117, 137, 86, 20);
-		frame.getContentPane().add(textField_4);
-		textField_4.setColumns(10);
+		textField_423 = new JTextField();
+		textField_423.setBounds(117, 137, 86, 20);
+		frame.getContentPane().add(textField_423);
+		textField_423.setColumns(10);
 		
 		JButton btnProccessTheOrder = new JButton("Proccess the order");
 		btnProccessTheOrder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				System.out.println("Please what while your Order is placed");
 				try (PrintWriter out = new PrintWriter("OrderFile")) {
-				    out.println("Item" + textField);
-				    out.println("Amount" +textField_1);
-				    out.println("User ID" + textField_2);
-				    out.println("Shipping address" + textField_3);
-				    out.println("Cost" + textField_4);
+				    out.println("Item" + textField23);
+				    out.println("Amount" +textField_123);
+				    out.println("User ID" + textField_223);
+				    out.println("Shipping address" + textField_323);
+				    out.println("Cost" + textField_423);
 			} catch (FileNotFoundException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
+				System.out.println("Your order has been placed");
 			}
 		});
 		btnProccessTheOrder.setBounds(234, 227, 176, 23);
