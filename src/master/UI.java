@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class UI {
-	private CreateUser CreateUser = new CreateUser();
+	
 	private JFrame frame;
 	private JTextField textField;
 	private JTextField textField_1;
@@ -61,6 +61,7 @@ public class UI {
 		textField.setBounds(231, 71, 86, 20);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
+		
 		
 		textField_1 = new JTextField();
 		textField_1.setBounds(231, 114, 86, 20);

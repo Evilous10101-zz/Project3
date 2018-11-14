@@ -1,11 +1,15 @@
 package master;
 
 import java.awt.EventQueue;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class MakeOrder {
 
@@ -98,8 +102,25 @@ public class MakeOrder {
 		textField_4.setColumns(10);
 		
 		JButton btnProccessTheOrder = new JButton("Proccess the order");
+		btnProccessTheOrder.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try (PrintWriter out = new PrintWriter("OrderFile")) {
+				    out.println("Item" + textField);
+				    out.println("Amount" +textField_1);
+				    out.println("User ID" + textField_2);
+				    out.println("Shipping address" + textField_3);
+				    out.println("Cost" + textField_4);
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			}
+		});
 		btnProccessTheOrder.setBounds(234, 227, 176, 23);
 		frame.getContentPane().add(btnProccessTheOrder);
 	}
+	
+	
+	
 
 }
