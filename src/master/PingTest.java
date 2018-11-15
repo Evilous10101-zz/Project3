@@ -5,9 +5,15 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class PingTest {
+public abstract class PingTest {
+	public static void Test() {
+		// TODO Auto-generated method stub
+		
+	
+	{
 	HttpURLConnection connection = null;
 	{
+		System.out.println("If the system prints out 200 then the website is up");
     try {
         URL u = new URL("http://www.google.com/");
         connection = (HttpURLConnection) u.openConnection();
@@ -27,5 +33,7 @@ public class PingTest {
         }
     }
 	}
+	}
 
+}
 }

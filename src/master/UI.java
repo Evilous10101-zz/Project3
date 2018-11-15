@@ -20,6 +20,7 @@ public class UI {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -119,5 +120,14 @@ public class UI {
 		});
 		btnExit_1.setBounds(335, 227, 89, 23);
 		frame.getContentPane().add(btnExit_1);
+		
+		JButton btnPingTest = new JButton("Ping Test");
+		btnPingTest.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				PingTest.Test();
+			}
+		});
+		btnPingTest.setBounds(335, 181, 89, 23);
+		frame.getContentPane().add(btnPingTest);
 	}
 }
