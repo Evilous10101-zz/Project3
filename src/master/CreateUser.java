@@ -13,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class CreateUser {
 	
@@ -148,5 +149,22 @@ public class CreateUser {
 		JCheckBox chckbxAccepotTheTerms = new JCheckBox("Accept the terms of the aggrement of using this application");
 		chckbxAccepotTheTerms.setBounds(23, 173, 401, 23);
 		frame.getContentPane().add(chckbxAccepotTheTerms);
+		
+		JButton btnExit = new JButton("Exit");
+		btnExit.setForeground(Color.RED);
+		btnExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("Shuting down");
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				System.exit(0);
+			}
+		});
+		btnExit.setBounds(25, 227, 89, 23);
+		frame.getContentPane().add(btnExit);
 	}
 }

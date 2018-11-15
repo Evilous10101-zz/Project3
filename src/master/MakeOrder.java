@@ -12,6 +12,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
+import java.awt.Color;
 
 public class MakeOrder {
 
@@ -70,7 +71,7 @@ public class MakeOrder {
 		lblUserId.setBounds(25, 87, 46, 14);
 		frame.getContentPane().add(lblUserId);
 		
-		JLabel lblShippingAddress = new JLabel("Shipping address, State, and Zipcode");
+		JLabel lblShippingAddress = new JLabel("Shipping address, Town, State, and Zipcode");
 		lblShippingAddress.setBounds(25, 112, 289, 14);
 		frame.getContentPane().add(lblShippingAddress);
 		
@@ -131,5 +132,22 @@ public class MakeOrder {
 		});
 		btnProccessTheOrder.setBounds(234, 227, 176, 23);
 		frame.getContentPane().add(btnProccessTheOrder);
+		
+		JButton btnExit = new JButton("Exit");
+		btnExit.setForeground(Color.RED);
+		btnExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("Shuting down");
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				System.exit(0);
+			}
+		});
+		btnExit.setBounds(10, 227, 89, 23);
+		frame.getContentPane().add(btnExit);
 	}
 }

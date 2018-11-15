@@ -8,6 +8,7 @@ import javax.swing.JTextField;
 import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class UI {
 	
@@ -86,7 +87,7 @@ public class UI {
 		frame.getContentPane().add(lblLoginToContinue);
 		
 		JLabel lblGenericUiFor = new JLabel("Generic UI for Amazon ripoff that doesn't order anything");
-		lblGenericUiFor.setBounds(51, 11, 311, 14);
+		lblGenericUiFor.setBounds(10, 11, 414, 14);
 		frame.getContentPane().add(lblGenericUiFor);
 		
 		JButton btnMakeAnOrder = new JButton("Make an order");
@@ -96,7 +97,27 @@ public class UI {
 				
 			}
 		});
-		btnMakeAnOrder.setBounds(308, 227, 116, 23);
+		btnMakeAnOrder.setBounds(182, 227, 116, 23);
 		frame.getContentPane().add(btnMakeAnOrder);
+		
+		
+		
+		
+		JButton btnExit_1 = new JButton("Exit");
+		btnExit_1.setForeground(Color.RED);
+		btnExit_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("Shuting down");
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				System.exit(0);
+			}
+		});
+		btnExit_1.setBounds(335, 227, 89, 23);
+		frame.getContentPane().add(btnExit_1);
 	}
 }

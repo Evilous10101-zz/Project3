@@ -16,7 +16,7 @@ public class Address {
 		PrintWriter writer = new PrintWriter("UserLocation");
 		
 		writer.println("User ID: " + textFieldValue13);
-		writer.println("Shipping Address: " + textFieldValue14);
+		writer.println("Shipping Address, city, state, and zip code: " + textFieldValue14);
 		writer.close();
 	}
 
