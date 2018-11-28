@@ -114,7 +114,7 @@ public class MakeOrder {
 				String textFieldValue13 = textField_223.getText();
 				String textFieldValue14 = textField_323.getText();
 				String textFieldValue15 = textField_423.getText();
-				
+				//loads text values into system so order and address class can be use
 				try {
 					Order.CreateNewOrder();
 				} catch (IOException e1) {

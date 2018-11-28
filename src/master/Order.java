@@ -31,6 +31,7 @@ public class Order {
 		   FileOutputStream out = new FileOutputStream(OrderFile, true);
 		  out.write(textField23.getText().getBytes());
 		}
+	//FileStream type to write to file to see if it was more efficient. It's ok but needs to be edited
 	void saveToFile2(String OrderFile, JTextField textField_123) throws Exception {
 		   FileOutputStream out = new FileOutputStream(OrderFile, true);
 		  out.write(textField_123.getText().getBytes());
