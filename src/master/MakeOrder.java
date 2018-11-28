@@ -105,6 +105,7 @@ public class MakeOrder {
 		textField_423.setColumns(10);
 		
 		JButton btnProccessTheOrder = new JButton("Proccess the order");
+		btnProccessTheOrder.setForeground(Color.BLUE);
 		btnProccessTheOrder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Please what while your Order is placed");
