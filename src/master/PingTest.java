@@ -19,13 +19,13 @@ public abstract class PingTest {
         connection = (HttpURLConnection) u.openConnection();
         connection.setRequestMethod("HEAD");
         int code = connection.getResponseCode();
-        System.out.println("" + code);
-        // You can determine on HTTP return code received. 200 is success.
+        System.out.println(code);
+        // 200 is success. Later will be changed to a simpler number
     } catch (MalformedURLException g) {
-        // TODO Auto-generated catch block
+        
         g.printStackTrace();
     } catch (IOException g) {
-        // TODO Auto-generated catch block
+        //catches what the ping test has gathered to see if it is good or not. It didn't worth without this so far
         g.printStackTrace();
     } finally {
         if (connection != null) {
